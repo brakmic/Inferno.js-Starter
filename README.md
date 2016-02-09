@@ -52,4 +52,4 @@ Currently, there's not much to test because everything here is still in flux.
 
 ## License
 
-MIT
+<a href="https://github.com/brakmic/CarPool/blob/master/LICENSE">MIT</a>
