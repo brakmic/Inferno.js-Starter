@@ -1,15 +1,17 @@
 ## CarPool
 
-This is a WebApp based on Inferno.js
+This is a WebApp based on <a href="https://github.com/trueadm/inferno">Inferno.js</a>, an <a href="http://infernojs.org/benchmarks/dbmonster-spike/">extremely fast</a>, <a href="http://facebook.github.io/react/">React-API</a> compatible library.
 
-Currently, there's not much in it but:
+Currently, there's not much in this demo but:
 
-- it contains a complete infrastructure built on Inferno.js (a React.js API compatible library) and Bootstrap
-- it contains a web server based on Hapi.js
+- it contains a complete infrastructure built on <a href="https://github.com/trueadm/inferno">Inferno.js</a> and <a href="http://getbootstrap.com/">Bootstrap</a>
+- it contains a web server based on <a href="http://hapijs.com/">Hapi</a>
 - it contains build scripts built with Gulp.js and WebPack
 - it contains a testing skeleton based on Mocha & Chai
-- it contains a few Redux action creators and a reducer (soon I'll provide a Redux-based state management)
+- it contains a few <a href="http://redux.js.org/">Redux</a> action creators and a reducer (soon I'll provide a Redux-based state management)
 - it contains a rudimentary 'CarPool' WebApp showing a few (*freely available*) car pictures
+
+<img src="http://fs5.directupload.net/images/160209/ihft79fr.png">
 
 ## Installation
 
