@@ -7,7 +7,7 @@ Currently, there's not much in this demo but:
 - it contains a complete **infrastructure** built on <a href="https://github.com/trueadm/inferno">Inferno.js</a> and <a href="http://getbootstrap.com/">Bootstrap</a>
 - it contains a **web server** based on <a href="http://hapijs.com/">Hapi</a>
 - it contains **Babel.js** and the needed presets and plugins. [*see .babelrc*]
-- it contains **build scripts** built with Gulp.js and WebPack
+- it contains **build configs** for Gulp.js and WebPack
 - it contains a **testing skeleton** based on Mocha & Chai
 - it contains a few **<a href="http://redux.js.org/">Redux</a>** action creators and a reducer (soon I'll provide a Redux-based state management)
 - it contains a **rudimentary** 'CarPool' **WebApp** showing a few (*freely available*) car pictures
