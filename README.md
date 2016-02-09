@@ -11,6 +11,11 @@ Currently, there's not much in it but:
 - it contains a few Redux action creators and a reducer (soon I'll provide a Redux-based state management)
 - it contains a rudimentary 'CarPool' WebApp showing a few (*freely available*) car pictures
 
+## Installation
+
+```shell
+npm install
+```
 
 ## Building
 
