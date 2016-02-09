@@ -53,6 +53,22 @@ class CarInfo extends Component {
     this.props.onCarSelected(this.props.name);
   }
 
+  componentDidMount() {
+    console.log('CarInfo for ' + this.props.name + ' did mount.');
+  }
+
+  componentWillMount() {
+    console.log('CarInfo for ' + this.props.name + ' will mount.');
+  }
+
+  componentWillUnmount() {
+    console.log('CarInfo for ' + this.props.name + ' will unmount.');
+  }
+
+  componentWillReceiveProps(nextProps) {
+     console.log('CarInfo for ' + this.props.name + ' will receive these props: ' + JSON.stringify(nextProps, null, 4));
+  }
+
   render(props) {
     return (
           <a href="#"
