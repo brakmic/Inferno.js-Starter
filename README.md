@@ -34,7 +34,27 @@ For continuous development use (utilizes the LiveReload Chrome-Plugin if enabled
 gulp watch
 ```
 
-There's no `hot-reloading` because Inferno.js Components can't be consumed by the WebPack Hot-Loader.
+There's no `hot-reloading` because Inferno.js Components can't be consumed by WebPack's Hot-Loader. This is understandable as Inferno's components
+only have a React-compatible API but not the internal structure. For example, the <a href="https://github.com/trueadm/inferno/blob/master/src/DOM/rendering.js#L32">InfernoDOM.render()</a> function doesn't return the instance of the root
+Component. And without it the HotLoader will be <a href="https://christianalfoni.github.io/react-webpack-cookbook/Hot-loading-components.html">unable to localize the root of the WebApp.</a>
+
+### Example code from React Hot-Loading Docs
+
+```javascript
+// When you render it, assign it to a variable
+var rootInstance = React.render(RootComponent(), document.body);
+
+// Then just copy and paste this part at the bottom of
+// the file
+if (module.hot) {
+  require('react-hot-loader/Injection').RootInstanceProvider.injectProvider({
+    getRootInstances: function () {
+      // Help React Hot Loader figure out the root component instances on the page:
+      return [rootInstance];
+    }
+  });
+}
+```
 
 I'll try to find out if there's any possibility to hot-load Inferno's components and for the time being you can use the older `livereload` functionality provided by <a href="https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei">LiveReload Chrome-Plugin</a> + `gulp watch` from the console.
 
