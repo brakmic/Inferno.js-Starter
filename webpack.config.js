@@ -10,7 +10,7 @@ var stylesRoot        = srcRoot + 'styles/';
 var nodeScripts       = root + 'node_modules/';
 var scripts           = srcRoot + 'scripts/';
 var buildScripts      = root + 'src/scripts/';
-var releaseScripts    = root + 'build/release/';
+var releaseScripts    = 'build/release/';
 var vendorScripts     = buildScripts + 'vendor/';
 var vendorStyles      = stylesRoot + 'vendor/';
 var appScripts        = buildScripts + 'app/';
@@ -20,13 +20,14 @@ var serviceScripts    = buildScripts + 'app/services/';
 
 var config = {
   cache: false,
-  entry: {
-    'app': path.resolve(appScripts, 'main.js')
-  },
+  entry: [
+      './src/scripts/app/main.jsx'
+  ],
   output: {
-    path: path.resolve(releaseScripts),
-    filename: '[name].min.js',
-    sourceMapFilename: '[name].min.js.map',
+    path: path.join(__dirname, 'dist'),
+    filename: 'bundle.js',
+    sourceMapFilename: 'bundle.js.map',
+    publicPath: '/static/'
   },
 
   module: {
@@ -41,20 +42,6 @@ var config = {
           esnext: true,
           failOnHint: false
         },*/
-    devServer: {
-      contentBase: './output/release/',
-      port: 8080,
-      noInfo: false,
-      hot: true,
-      inline: true,
-      proxy: {
-        '/': {
-          bypass: function (req, res, proxyOptions) {
-            return '/index.html';
-          }
-        }
-      }
-    },
     loaders: [
             {
                 include: /\.json$/,
@@ -66,7 +53,7 @@ var config = {
                 loader: 'typescript-loader?typescriptCompiler=typescript'
             },
             {
-                test : /\.(es6|js)$/,
+                test : /\.(es6|js|jsx)$/,
                 exclude: [/^(node_modules|bower_components|vendor)/],
                 loader: 'babel-loader',
                 query: {
@@ -78,6 +65,10 @@ var config = {
                 loader: 'html'
             },
             {
+                test : /\.scss$/,
+                loader: 'style-loader!css-loader!scss-loader'
+            },
+            {
                 test : /\.less$/,
                 loader: 'style-loader!css-loader!less-loader'
             },
@@ -86,7 +77,7 @@ var config = {
                 loader: 'style-loader!css-loader'
             },
             {   test: /.(png|woff(2)?|eot|ttf|svg)(\?[a-z0-9=\.]+)?$/,
-                loader: 'url-loader?limit=100000'
+                loader: 'url-loader?limit=8192'
             },
             {   test: /\.jpg$/,
                 loader: "file-loader?name=[path][name].[ext]"
@@ -98,8 +89,8 @@ var config = {
       extensions: ['', '.js', '.es6', '.es6.js', '.jsx', '.json', '.ts', '.css', '.html'],
       modulesDirectories: ['node_modules', 'bower_components', 'vendorStyles', 'vendorScripts'],
       alias: {
-              "bootstrap.css"       : "src/styles/bootstrap/css/bootstrap.min.css",
-              "bootstrap-theme.css" : "src/styles/bootstrap/css/bootstrap-theme.min.css",
+              "bootstrap.css"       : "static/styles/bootstrap/css/bootstrap.min.css",
+              "bootstrap-theme.css" : "static/styles/bootstrap/css/bootstrap-theme.min.css",
               "bootstrap.js"        : "src/scripts/vendor/bootstrap/js/bootstrap.min.js"
       }
   },
@@ -111,15 +102,13 @@ var config = {
             threshold : 10240,
             minRatio  : 0.8
         }),*/
-         new webpack.optimize.LimitChunkCountPlugin({ maxChunks: 1 }),
-         new webpack.ProvidePlugin({
-          'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
-        }),
-        new webpack.HotModuleReplacementPlugin(),
+        //
+        // new webpack.HotModuleReplacementPlugin(),
         new webpack.ProvidePlugin({
           $: "jquery",
           jQuery: "jquery",
-          "windows.jQuery": "jquery"
+          "windows.jQuery": "jquery",
+          'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
         })
     ]
 };
@@ -130,6 +119,7 @@ if (process.env.NODE_ENV === 'production') {
             NODE_ENV: JSON.stringify('production')
         }
     }),
+    new webpack.optimize.LimitChunkCountPlugin({ maxChunks: 1 }),
     new AsyncUglifyJs({
       delay: 5000,
       minifyOptions: {
@@ -160,12 +150,7 @@ if (process.env.NODE_ENV === 'production') {
       done: function(path, originalContents) { }
     }),
     new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(true),
-    new webpack.ProvidePlugin({
-        $: "jquery",
-        jQuery: "jquery",
-        "windows.jQuery": "jquery"
-    })
+    new webpack.optimize.OccurenceOrderPlugin(true)
   ]);
 } else {
     config.devtool = '#source-map';

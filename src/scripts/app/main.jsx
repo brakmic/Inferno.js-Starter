@@ -72,7 +72,7 @@ class CarInfo extends Component {
   render(props) {
     return (
           <a href="#"
-            class={"list-group-item " + this.state.activeClass}
+            className={"list-group-item " + this.state.activeClass}
             onBlur={this.blur}
             onFocus={this.focus}
             onClick={this.click}>
@@ -94,7 +94,7 @@ class App extends Component {
   setSelectedCar(car){
     this.setState({
       selectedCar: car,
-      carPicture: 'content/images/' + car.toLowerCase() + '.png'
+      carPicture: '/static/content/images/' + car.toLowerCase() + '.png'
     });
     console.log('Picture: ' + this.state.carPicture);
   }
@@ -102,10 +102,10 @@ class App extends Component {
   render() {
     var self = this;
     return (
-      <div clas="container">
-        <div class="row">
-          <div class="col-md-3">
-            <div class="list-group">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-3">
+            <div className="list-group">
               { [ 'Volvo', 'BMW', 'Mercedes' ].map((car) => {
                 return (
                   <CarInfo onCarSelected={self.setSelectedCar} value={car} name={car}/>
@@ -114,8 +114,8 @@ class App extends Component {
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-8">
+        <div className="row">
+          <div className="col-md-8">
             <CarDetails picture={self.state.carPicture}/>
           </div>
         </div>

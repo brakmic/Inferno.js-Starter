@@ -28,13 +28,17 @@ gulp
 
 Gulp will then copy all the files from `src/` to `build/tmp` and invoke WebPack which in turn will create a new release under `build/release`.
 
-For continuous development use:
+For continuous development use (utilizes the LiveReload Chrome-Plugin if enabled):
 
 ```shell
 gulp watch
 ```
 
-Currently, there's no `hot-reloading` but I'll provide this functionality very soon. :smile:
+There's no `hot-reloading` because Inferno.js Components can't be consumed by the WebPack Hot-Loader.
+
+I'll try to find out if there's any possibility to hot-load Inferno's components and for the time being you can use the older `livereload`
+
+functionality provided by LiveReload Chrome-Plugin + `gulp watch` from the console.
 
 ## Running
 

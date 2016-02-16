@@ -9,38 +9,22 @@ server.connection({ port: 8080 });
 server.register(Inert, function () {});
 
 server.route({
-      path: '/app.min.js',
-      method: 'GET',
-      handler: function(request, reply) {
-          reply.file('build/release/app.min.js');
-      }
-});
-
-server.route({
-      path: '/app.min.js.map',
-      method: 'GET',
-      handler: function(request, reply) {
-          reply.file('build/release/app.min.js.map');
-      }
-});
-
-server.route({
-      path: '/styles/{filename*}',
+      path: '/static/{filename*}',
       method: 'GET',
       handler: {
         directory: {
-            path: 'build/release/styles',
+            path: 'static',
             listing: false
         }
       }
 });
 
 server.route({
-      path: '/content/{filename*}',
+      path: '/dist/{filename*}',
       method: 'GET',
       handler: {
         directory: {
-            path: 'build/release/content',
+            path: 'dist',
             listing: false
         }
       }
@@ -51,7 +35,7 @@ server.route({
       path: '/{p*}',
       method: 'GET',
       handler: function(request, reply) {
-          reply.file('build/release/index.html');
+          reply.file('index.html');
       }
 });
 

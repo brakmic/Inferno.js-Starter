@@ -30,7 +30,7 @@ var webpackInst       = webpack(webpackConfig);
 //Paths
 var root               = __dirname + '/';
 var _sourcesRoot       = root + 'src/';
-var _outputRoot        = root + 'build/';
+var _buildRoot         = root + 'build/';
 var scriptsRoot        =  _sourcesRoot + 'scripts/';
 var appScriptsRoot     = scriptsRoot + 'app/';
 var tsRoot             = appScriptsRoot;
@@ -40,14 +40,14 @@ var stylesRoot         = _sourcesRoot + 'styles/';
 var htmlRoot           = _sourcesRoot + '**/*.html';
 var contentRoot        = _sourcesRoot + 'content/**';
 var tsPattern          = tsRoot + '**/*.ts';
-var jsPattern          = appScriptsRoot + '**/*.js';
+var jsPattern          = appScriptsRoot + '**/*.js*';
 var cssPattern         = stylesRoot + '**/*.css';
 var lessPattern        = stylesRoot + '**/*.less';
 var sassPattern        = stylesRoot + '**/*.sass';
 var htmlPattern        = scriptsRoot + '**/*.html';
 var templatesPattern   = templatesRoot + '**/*.html';
-var buildRoot          = _outputRoot + 'tmp/';
-var releaseRoot        = _outputRoot + 'release/';
+var buildRoot          = _buildRoot + 'tmp/';
+var releaseRoot        = './dist/';
 var releaseScripts     = releaseRoot + 'scripts/';
 var releaseStyles      = releaseRoot + 'styles/';
 var defsDest           = buildRoot + 'defs/';
@@ -65,7 +65,7 @@ var watchPaths        = [
 var webpackDest       = path.resolve(releaseRoot);
 
 gulp.task('webpack',  ['copy'], function(){
-  return gulp.src('output/build/scripts/app/main.js')
+  return gulp.src('build/tmp/scripts/app/main.jsx')
     .pipe(webPackStream(require('./webpack.config.js')))
     .pipe(gulp.dest(webpackDest));
 });
@@ -82,7 +82,7 @@ gulp.task('webpack-dev-server', function(callback) {
   server.listen(8080, "localhost", function() {});
 
   gutil.log('[webpack-dev-server]',
-    'http://localhost:8080/webpack-dev-server/build/index.html');
+    'http://localhost:8080/webpack-dev-server/build/release/index.html');
 
   callback();
 });
@@ -91,7 +91,7 @@ gulp.task('watch', function() {
     livereload.listen();
     gulp.watch(watchPaths, ['copy']).on('change', function(event) {
         if (event.type === 'changed') {
-            gulp.src('src/scripts/app/main.js')
+            gulp.src('src/scripts/app/main.jsx')
               .pipe(webPackStream(require('./webpack.config.js')))
               .pipe(gulp.dest(webpackDest))
               .pipe(livereload());
