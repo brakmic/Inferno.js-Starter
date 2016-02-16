@@ -36,7 +36,7 @@ gulp watch
 
 There's no `hot-reloading` because Inferno.js Components can't be consumed by the WebPack Hot-Loader.
 
-I'll try to find out if there's any possibility to hot-load Inferno's components and for the time being you can use the older `livereload` functionality provided by LiveReload Chrome-Plugin + `gulp watch` from the console.
+I'll try to find out if there's any possibility to hot-load Inferno's components and for the time being you can use the older `livereload` functionality provided by <a href="https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei">LiveReload Chrome-Plugin</a> + `gulp watch` from the console.
 
 ## Running
 
