@@ -38,7 +38,7 @@ There's no `hot-reloading` because Inferno.js Components can't be consumed by We
 only have a React-compatible API but not the internal structure. For example, the <a href="https://github.com/trueadm/inferno/blob/master/src/DOM/rendering.js#L32">InfernoDOM.render()</a> function doesn't return the instance of the root
 Component. And without it the HotLoader will be <a href="https://christianalfoni.github.io/react-webpack-cookbook/Hot-loading-components.html">unable to localize the root of the WebApp.</a>
 
-### Example code from React Hot-Loading Docs
+## Example code from React Hot-Loading Docs
 
 ```javascript
 // When you render it, assign it to a variable
