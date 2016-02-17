@@ -2,15 +2,15 @@
 
 This is a WebApp based on <a href="https://github.com/trueadm/inferno">Inferno.js</a>, an <a href="http://infernojs.org/benchmarks/dbmonster-spike/">extremely fast</a>, <a href="http://facebook.github.io/react/">React-API</a> compatible library.
 
-Currently, there's not much in this demo but:
+Currently, there's not much in this demo but it contains:
 
-- it contains a complete **infrastructure** built on <a href="https://github.com/trueadm/inferno">Inferno.js</a> and <a href="http://getbootstrap.com/">Bootstrap</a>
-- it contains a **web server** based on <a href="http://hapijs.com/">Hapi</a>
-- it contains **Babel.js** and the needed presets and plugins. [*see .babelrc*]
-- it contains **build configs** for Gulp.js and WebPack
-- it contains a **testing skeleton** based on Mocha & Chai
-- it contains a few **<a href="http://redux.js.org/">Redux</a>** action creators and a reducer (soon I'll provide a Redux-based state management)
-- it contains a **rudimentary** 'CarPool' **WebApp** showing a few (*freely available*) car pictures
+- a complete **infrastructure** built on <a href="https://github.com/trueadm/inferno">Inferno.js</a> and <a href="http://getbootstrap.com/">Bootstrap</a>
+- a **web server** based on <a href="http://hapijs.com/">Hapi</a>
+- **Babel.js** and the needed presets and plugins. [*see .babelrc*]
+- **build configs** for Gulp.js and WebPack
+- **testing skeleton** based on Mocha & Chai
+- a few **<a href="http://redux.js.org/">Redux</a>** action creators and a reducer (soon I'll provide a Redux-based state management)
+- a **rudimentary** 'CarPool' **WebApp** showing a few (*freely available*) car pictures
 
 <img src="http://fs5.directupload.net/images/160209/ihft79fr.png">
 
