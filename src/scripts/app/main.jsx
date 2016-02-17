@@ -10,13 +10,17 @@ class CarDetails extends Component {
   constructor(props){
     super(props);
     this.state = {
-      picture: null
+      picture: '',
+      info: ''
     }
   }
   render(props){
     return (
         <div>
           {this.props.picture ? <img src={this.props.picture} width="700" height="500" /> : <div/>}
+          <div className="note">
+          <textarea className="form-control" ref="carText" value={this.props.info}></textarea>
+          </div>
         </div>
       );
   }
@@ -26,7 +30,8 @@ class CarInfo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeClass: 'none'
+      activeClass: 'none',
+      name: ''
     };
 
     this.blur = this.blur.bind(this);
@@ -106,9 +111,9 @@ class App extends Component {
         <div className="row">
           <div className="col-md-3">
             <div className="list-group">
-              { [ 'Volvo', 'BMW', 'Mercedes' ].map((car) => {
+              { [ 'Volvo', 'BMW', 'Mercedes' ].map((car, idx) => {
                 return (
-                  <CarInfo onCarSelected={self.setSelectedCar} value={car} name={car}/>
+                  <CarInfo onCarSelected={self.setSelectedCar} name={car} key={idx}/>
                 );
               })}
             </div>
@@ -116,7 +121,7 @@ class App extends Component {
         </div>
         <div className="row">
           <div className="col-md-8">
-            <CarDetails picture={self.state.carPicture}/>
+            <CarDetails picture={self.state.carPicture} info={self.state.selectedCar}/>
           </div>
         </div>
       </div>

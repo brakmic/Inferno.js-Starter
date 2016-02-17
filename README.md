@@ -28,7 +28,7 @@ gulp
 
 Gulp will then copy all the files from `src/` to `build/tmp` and invoke WebPack which in turn will create a new release under `build/release`.
 
-For continuous development use (utilizes the LiveReload Chrome-Plugin if enabled):
+For continuous development use:
 
 ```shell
 gulp watch
