@@ -9,7 +9,7 @@ Currently, there's not much in this demo but it contains:
 - **Babel.js** and the needed presets and plugins. [*see .babelrc*]
 - **build configs** for Gulp.js and WebPack
 - **testing skeleton** based on Mocha & Chai
-- a few **<a href="http://redux.js.org/">Redux</a>** action creators and a reducer (soon I'll provide a Redux-based state management)
+- a minimal **<a href="http://redux.js.org/">Redux</a>** state management
 - a **rudimentary** 'CarPool' **WebApp** showing a few (*freely available*) car pictures
 
 <img src="http://fs5.directupload.net/images/160209/ihft79fr.png">
@@ -71,6 +71,9 @@ Hapi.js will use `index.js` from the root of the project and serve the contents 
 ```shell
 npm test
 ```
+
+<img src="http://fs5.directupload.net/images/160916/hyed7e2h.png">
+
 
 or for continuous testing
 
