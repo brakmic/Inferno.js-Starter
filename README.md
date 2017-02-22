@@ -2,7 +2,7 @@
 
 This is a WebApp based on <a href="https://github.com/trueadm/inferno">Inferno.js</a>, an <a href="http://infernojs.org/benchmarks/dbmonster-spike/">extremely fast</a>, <a href="http://facebook.github.io/react/">React-API</a> compatible library.
 
-Currently, there's not much in this demo but it contains:
+It contains:
 
 - a complete **infrastructure** built on <a href="https://github.com/trueadm/inferno">Inferno.js</a> and <a href="http://getbootstrap.com/">Bootstrap</a>
 - a **web server** based on <a href="http://hapijs.com/">Hapi</a>

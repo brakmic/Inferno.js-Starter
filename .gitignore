@@ -35,3 +35,4 @@ node_modules
 #build & release dirs
 build/
 dist/
+*.DB
