@@ -85,9 +85,9 @@ var config = {
     ]
   },
    resolve: {
-      root: root,
-      extensions: ['', '.js', '.es6', '.es6.js', '.jsx', '.json', '.ts', '.css', '.html'],
-      modulesDirectories: ['node_modules', 'bower_components', 'vendorStyles', 'vendorScripts'],
+      // root: root,
+      extensions: ['.js', '.es6', '.es6.js', '.jsx', '.json', '.ts', '.css', '.html'],
+      // modulesDirectories: ['node_modules', 'bower_components', 'vendorStyles', 'vendorScripts'],
       alias: {
               "bootstrap.css"       : "static/styles/bootstrap/css/bootstrap.min.css",
               "bootstrap-theme.css" : "static/styles/bootstrap/css/bootstrap-theme.min.css",
@@ -154,10 +154,10 @@ if (process.env.NODE_ENV === 'production') {
   ]);
 } else {
     config.devtool = '#source-map';
-    config.debug   = true;
+    // config.debug   = true;
 }
 
-config.useMemoryFs = true;
-config.progress = true;
+// config.useMemoryFs = true;
+// config.progress = true;
 
 module.exports = config;

@@ -1,5 +1,4 @@
 import Inferno from 'inferno';
-import InfernoDOM from 'inferno-dom';
 import Component from 'inferno-component';
 
 class CarInfo extends Component {
@@ -25,11 +24,12 @@ class CarInfo extends Component {
   }
 
   render(props) {
+    var self = this;
     return (
           <a href="#"
-            className={"list-group-item " + this.state.activeClass}
-            onClick={this.click}>
-            {this.props.name}
+            className={"list-group-item " + self.state.activeClass}
+            onClick={self.click}>
+            {self.props.name}
          </a>
     );
   }

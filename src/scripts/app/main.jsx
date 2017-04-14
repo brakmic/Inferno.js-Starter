@@ -1,10 +1,9 @@
 import Inferno from 'inferno';
-import InfernoDOM from 'inferno-dom';
 import Component from 'inferno-component';
 
-import 'bootstrap.css';
-import 'bootstrap-theme.css';
-import 'bootstrap.js';
+import '../../../static/bootstrap/css/bootstrap.css';
+import '../../../static/bootstrap/css/bootstrap-theme.css';
+import '../../../static/bootstrap/js/bootstrap.js';
 import { App } from './components';
 
-InfernoDOM.render(<App />, document.getElementById('app'));
+Inferno.render(<App />, document.getElementById('app'));

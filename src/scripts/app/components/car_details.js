@@ -1,5 +1,4 @@
 import Inferno from 'inferno';
-import InfernoDOM from 'inferno-dom';
 import Component from 'inferno-component';
 
 class CarDetails extends Component {
@@ -11,11 +10,12 @@ class CarDetails extends Component {
     }
   }
   render(props){
+    var self = this;
     return (
         <div>
-          {this.props.picture ? <img src={this.props.picture} width="700" height="500" /> : <div/>}
+          {self.props.picture ? <img src={self.props.picture} width="700" height="500" /> : <div/>}
           <div className="note">
-          <textarea className="form-control" ref="carText" value={this.props.info}></textarea>
+          <textarea className="form-control" value={self.props.info}></textarea>
           </div>
         </div>
       );

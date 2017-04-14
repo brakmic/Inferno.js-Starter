@@ -1,5 +1,4 @@
 import Inferno from 'inferno';
-import InfernoDOM from 'inferno-dom';
 import Component from 'inferno-component';
 import CarInfo from './car_info';
 import CarDetails from './car_details';
