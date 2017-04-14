@@ -12,7 +12,7 @@ It contains:
 - a minimal **<a href="http://redux.js.org/">Redux</a>** state management
 - a **rudimentary** 'CarPool' **WebApp** showing a few (*freely available*) car pictures
 
-<img src="http://fs5.directupload.net/images/160209/ihft79fr.png">
+<img src="https://i.imgsafe.org/085c84226a.png">
 
 ## Installation
 
