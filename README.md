@@ -72,7 +72,7 @@ Hapi.js will use `index.js` from the root of the project and serve the contents 
 npm test
 ```
 
-<img src="http://fs5.directupload.net/images/160916/hyed7e2h.png">
+<img src="https://i.imgsafe.org/31e0bafb2e.png">
 
 
 or for continuous testing
