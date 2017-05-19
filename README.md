@@ -12,7 +12,7 @@ It contains:
 - a minimal **<a href="http://redux.js.org/">Redux</a>** state management
 - a **rudimentary** 'CarPool' **WebApp** showing a few (*freely available*) car pictures
 
-<img src="https://i.imgsafe.org/085c84226a.png">
+![inferno_front](https://img4.picload.org/image/rirpiwdi/inferno_front.png)
 
 ## Installation
 
@@ -72,7 +72,7 @@ Hapi.js will use `index.js` from the root of the project and serve the contents 
 npm test
 ```
 
-<img src="https://i.imgsafe.org/31e0bafb2e.png">
+![inferno_test](https://picload.org/image/rirpiwdw/inferno_test.png)
 
 
 or for continuous testing
